@@ -1,0 +1,14 @@
+name: 'Github Action Log URL'
+description: 'A Github action to get log url'
+inputs:
+  github_context: 
+    description: 'Github Context'
+    required: true
+    default: null
+  
+outputs:
+  result:
+    description: 'Result url'
+runs:
+  using: 'node12'
+  main: 'index.js'
