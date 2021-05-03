@@ -1,14 +1,13 @@
 const core = require("@actions/core");
+const github = require("@actions/github");
 const axios = require('axios').default;
 const cheerio = require('cheerio');
 
 
-const GITHUB = core.getInput("github_context");
-
 const getHTML = async () => {
-   const url = `https://github.com/${GITHUB.repository}/actions/runs/${GITHUB.run_id}`;
-   console.log(GITHUB);
-   console.log(url);
+   const url = `https://github.com/${github.context.repo}/actions/runs/${github.context.runId}`;
+   console.log('context',github.context);
+   console.log('url',url);
    const res = await axios.get(url)
    return res.data
 }
