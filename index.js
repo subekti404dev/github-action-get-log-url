@@ -6,7 +6,7 @@ const cheerio = require('cheerio');
 
 const getHTML = async () => {
    const url = `https://github.com/${github.context.repo}/actions/runs/${github.context.runId}`;
-   console.log('context',github.context);
+   console.log('repo',github.context.repo);
    console.log('url',url);
    const res = await axios.get(url)
    return res.data
