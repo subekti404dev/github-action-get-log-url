@@ -7,6 +7,8 @@ const GITHUB = core.getInput("github_context");
 
 const getHTML = async () => {
    const url = `https://github.com/${GITHUB.repository}/actions/runs/${GITHUB.run_id}`;
+   console.log(GITHUB);
+   console.log(url);
    const res = await axios.get(url)
    return res.data
 }
